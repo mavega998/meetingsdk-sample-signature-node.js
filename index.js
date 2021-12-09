@@ -10,6 +10,8 @@ const port = process.env.PORT || 4000
 app.use(bodyParser.json(), cors())
 app.options('*', cors());
 
+app.use('/', express.static('public'))
+
 app.post('/', (req, res) => {
 
   const timestamp = new Date().getTime() - 30000
